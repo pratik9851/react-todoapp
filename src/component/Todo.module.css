@@ -1,0 +1,29 @@
+.inp{
+    width: 20%;
+    font-size: 14px;
+    
+}
+
+.list1{
+   
+    border: 1px solid black;
+    width: 300px;
+    margin-left: 38%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.list2{
+    text-decoration: line-through;
+    border: 1px solid black;
+    width: 300px;
+    margin-left: 38%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 10px;
+}
