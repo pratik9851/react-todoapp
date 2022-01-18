@@ -1,11 +1,20 @@
-// add eslint
+/**
+ * no inline funcs: onKeyPress={(e)=> handelenter(e)} -> WHy ?
+ * use eslint formatter
+ * better naming convention
+ * setText instead of settext
+ * use id instead -> (el) => el.title !== e.title
+ * write a class for this component
+ * integrate redux and implement this todo app using redux -> connect function -> react-redux, redux
+ */
+
 import React from 'react'
 import { useState } from "react";
 
 import style from "./Todo.module.css"
 
 export default function Todo() {
-    const [text,settext]=useState('') 
+    const [text,settext]=useState('')
     const [todolist,settodolist]=useState([]) 
     const[toggle,settoggle]=useState(false)
     const handelChange=(e)=>{
