@@ -22,11 +22,11 @@ export default function Todo() {
     }
   };
 
-  const handelremove=(e)=>()=>{
+  const handelremove = (e) => () => {
     let data = todolist.filter((el) => el.id !== e.id);
 
     setTodolist(data);
-  }
+  };
 
   /*const handelremove = (e) => {
     let data = todolist.filter((el) => el.id !== e.id);
@@ -43,7 +43,7 @@ export default function Todo() {
     }
   };
 
-  const handelisalldone = (id) => {
+  const handelisalldone = (id) => () => {
     const updatedlist = todolist.map((el) =>
       el.id === id ? { ...el, status: !el.status } : { ...el }
     );
@@ -83,7 +83,7 @@ export default function Todo() {
           >
             {e.title}
             <div>
-              <button onClick={() => handelisalldone(e.id)}>
+              <button onClick={handelisalldone(e.id)}>
                 {e.status ? "undone" : " done"}
               </button>
               <button onClick={handelremove(e)}>remove</button>
