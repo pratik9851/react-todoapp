@@ -2,6 +2,8 @@
 import './App.css';
 import Todo from './component/Todo';
 import Todoclass from './component/Todoclass';
+import { Provider } from 'react-redux';
+import {store} from "./redux/store"
 
 /*function App() {
   return (
@@ -12,14 +14,16 @@ import Todoclass from './component/Todoclass';
 }*/
 
 import React, { Component } from 'react'
+import Todoredux from './component/Todoredux';
 
 
 export default class App extends Component {
   render() {
     return (
       <div className='App'>
-         
-         <Todoclass/>
+         <Provider store={store}>
+         <Todoredux/>
+         </Provider>
       </div>
     )
   }

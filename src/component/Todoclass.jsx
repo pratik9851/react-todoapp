@@ -1,7 +1,14 @@
 import React, { Component } from "react";
+
 import style from "./Todolist.module.css";
 
-export default class Todoclass extends Component {
+
+
+
+
+
+
+ class Todoclass extends Component {
   constructor() {
     super();
     this.state = {
@@ -104,3 +111,6 @@ export default class Todoclass extends Component {
     );
   }
 }
+
+
+export default Todoclass
