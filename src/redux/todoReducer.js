@@ -8,7 +8,7 @@ import {
 } from "./todoActionTypes";
 
 const initialState = {
-  text: "",
+
   todolist: [{ title: "milk", status: false, id: Math.random() }],
   isalldone: false,
 };

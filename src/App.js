@@ -23,6 +23,7 @@ export default class App extends Component {
       <div className='App'>
          <Provider store={store}>
          <Todoredux/>
+         
          </Provider>
       </div>
     )

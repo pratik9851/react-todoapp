@@ -39,6 +39,7 @@ class Todoclass extends Component {
   }
 
   handelenter = (e) => {
+      console.log(e.key)
     if (e.key === "Enter") {
       this.props.add(this.state.text);
     }
@@ -46,8 +47,8 @@ class Todoclass extends Component {
   };
 
   handelChange = (e) => {
-    this.setState({
-      text: e.target.value,
+     // console.log(e.target.value)
+    this.setState({text:e.target.value
     });
   };
 
@@ -58,8 +59,8 @@ class Todoclass extends Component {
           className={style.inp}
           value={this.state.text}
           type="text"
-          onChange={this.handelChange.bind(this)}
-          onKeyPress={this.handelenter.bind(this)}
+          onChange={this.handelChange}
+          onKeyPress={this.handelenter}
           placeholder="Enter task"
         />
         <button onClick={this.props.add.bind(this, this.state.text)}>+</button>
