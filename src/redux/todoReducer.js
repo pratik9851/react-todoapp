@@ -1,3 +1,11 @@
+// lodash -> js lib -> map, filter, find
+/**
+ * jest -> test cases -> const sum = (a,b) => a + b , describe(''Name of test){ expect(sum(1,2)).equal(3) }
+ * write reducer tests
+ * write snapshot tests -> components
+ * jest
+ */
+
 import {
   ADD_TEXT,
   ADD_TODO,
@@ -9,7 +17,8 @@ import {
 
 const initialState = {
   text: "",
-  todolist: [{ title: "milk", status: false, id: Math.random() }],
+  // todolist: [{ title: "milk", status: false, id: Math.random() }],
+  todolist: null,
   isalldone: false,
 };
 
@@ -23,7 +32,7 @@ const todoReducer = (state = initialState, action) => {
     case ADD_TODO:
       return {
         ...state,
-        todolist: [...state.todolist, { ...action.payload }],
+        todolist: [...state.todolist, { ...action.payload }], // [...state.todolist, action.payload]
       };
     case ALL_DONE:
       return {

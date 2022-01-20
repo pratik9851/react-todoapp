@@ -52,6 +52,7 @@ class Todoclass extends Component {
   };
 
   render() {
+    // use destructuring
     return (
       <div>
         <input
@@ -59,7 +60,7 @@ class Todoclass extends Component {
           value={this.state.text}
           type="text"
           onChange={this.handelChange.bind(this)}
-          onKeyPress={this.handelenter.bind(this)}
+          // onKeyPress={this.handelenter.bind(this)}
           placeholder="Enter task"
         />
         <button onClick={this.props.add.bind(this, this.state.text)}>+</button>
