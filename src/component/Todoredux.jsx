@@ -53,14 +53,15 @@ class Todoclass extends Component {
   };
 
   render() {
+    // use destructuring
     return (
       <div>
         <input
           className={style.inp}
           value={this.state.text}
           type="text"
-          onChange={this.handelChange}
-          onKeyPress={this.handelenter}
+          onChange={this.handelChange.bind(this)}
+          // onKeyPress={this.handelenter.bind(this)}
           placeholder="Enter task"
         />
         <button onClick={this.props.add.bind(this, this.state.text)}>+</button>
