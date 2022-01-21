@@ -1,19 +1,30 @@
 import React from 'react'
-import styles from "./Todolist.module.css"
+import style from './todo1.module.css'
 
-export default function Todolist({list,settodolist}) {
-    const handelremove=(e)=>{
-        let data = list.filter(
-            (el) => el.title !== e.title
-          );
-          settodolist(data);
-    }
+export default function Todolist({mytodolist,done,remove}) {
     return (
         <div>
-             {list.map((e)=>(
-        <div className={styles.list1} id={Math.random()}>{e.title}<div><button>{e.status?"undone":" done"}</button><button onclick={handelremove(e)}>remove</button></div></div>
-        ))}
-
+            <div>
+          {mytodolist.map((e) => (
+            <div
+              className={`${e.status === false ? style.list1 : style.list2}`}
+              key={e.id}
+            >
+              {e.title}
+              <div>
+                <button onClick={()=>done(e.id)}>
+                  {e.status ? "undone" : " done"}
+                </button>
+                <button onClick={()=>remove( e.id)}>
+                  remove
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+            
         </div>
     )
 }
+
+

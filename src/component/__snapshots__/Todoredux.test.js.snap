@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`input component matches snapshot 1`] = `
+<div>
+  <input
+    className="inp"
+    placeholder="Enter task"
+    type="text"
+  />
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+</div>
+`;
+
+exports[`list component matches snapshot 1`] = `
+<div>
+  <div>
+    <div
+      className="list1"
+    >
+      task
+      <div>
+        <button
+          onClick={[Function]}
+        >
+           done
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot 1`] = `
+<div>
+  <div>
+    <div
+      className="list1"
+    >
+      task
+      <div>
+        <button
+          onClick={[Function]}
+        >
+           done
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

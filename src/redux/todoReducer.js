@@ -5,7 +5,7 @@
  * write snapshot tests -> components
  * jest
  */
-
+ import _ from 'lodash';
 import {
   ADD_TEXT,
   ADD_TODO,
@@ -17,17 +17,13 @@ import {
 
 const initialState = {
 
-  todolist: [{ title: "milk", status: false, id: Math.random() }],
+  todolist: [{title:"task",status:false,id:Math.random()}],
   isalldone: false,
 };
 
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_TEXT:
-      return {
-        ...state,
-        text: action.payload,
-      };
+
     case ADD_TODO:
       return {
         ...state,
@@ -36,7 +32,7 @@ const todoReducer = (state = initialState, action) => {
     case ALL_DONE:
       return {
         ...state,
-        todolist: state.todolist.map((el) =>
+        todolist: _.map(state.todolist,(el) =>
           state.isalldone === false
             ? { ...el, status: true }
             : { ...el, status: false }
@@ -52,12 +48,12 @@ const todoReducer = (state = initialState, action) => {
     case REMOVE_ONE:
       return {
         ...state,
-        todolist: state.todolist.filter((el) => el.id !== action.payload),
+        todolist: _.filter(state.todolist,(el) => el.id !== action.payload),
       };
     case DONE_ONE:
       return {
         ...state,
-        todolist: state.todolist.map((el) =>
+        todolist: _.map(state.todolist,(el) =>
           el.id === action.payload ? { ...el, status: !el.status } : { ...el }
         ),
       };
@@ -68,3 +64,9 @@ const todoReducer = (state = initialState, action) => {
 };
 
 export default todoReducer;
+/*
+state.todolist.map((el) =>
+state.isalldone === false
+  ? { ...el, status: true }
+  : { ...el, status: false }
+)*/
